@@ -11,6 +11,8 @@ The system provides search and filtering capabilities that allow users to explor
 
 Target users include fashion museums and galleries, vintage collectors and sellers, fashion historians and researchers, design students and educators, and general fashion enthusiasts.
 
+Here is Demo video :- https://drive.google.com/drive/folders/1Ljp8rtkSZv0LxpNGNYGk-HBckEHusurF
+
 Group 30
 Ojasya Nahar (2024396)
 Stanzin Chondol (2024565)
