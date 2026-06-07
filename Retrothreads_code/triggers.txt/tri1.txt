@@ -1,0 +1,13 @@
+CREATE TRIGGER update_listing_status 
+AFTER INSERT ON TRANSACTION
+REFERENCING NEW ROW AS nrow
+FOR EACH ROW
+BEGIN ATOMIC
+    UPDATE LISTING
+    SET status = 'Sold'
+    WHERE listing_id = nrow.listing_id;
+END;
+
+
+
+//How it helps your UI: In your "Marketplace" tab, as soon as a checkout is completed (a TRANSACTION is inserted), this trigger automatically removes the garment from the active shopping feed or overlays a "Sold" badge on the garment card. You don't have to write extra application code to remember to update the listing.

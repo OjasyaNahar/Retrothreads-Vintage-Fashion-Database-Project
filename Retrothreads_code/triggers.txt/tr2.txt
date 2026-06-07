@@ -1,0 +1,11 @@
+CREATE TRIGGER initialize_garment_approval 
+AFTER INSERT ON GARMENT
+REFERENCING NEW ROW AS nrow
+FOR EACH ROW
+BEGIN ATOMIC
+    INSERT INTO APPROVAL (entity_type, entity_id, approval_status)
+    VALUES ('GARMENT', nrow.garment_id, 'Pending');
+END;
+
+
+How it helps your UI: This populates the "Admin Panel" dashboard. As soon as a seller submits a garment via the "Seller Dashboard", this trigger ensures the admin immediately sees a new pending card in their queue to review and verify authenticity.
